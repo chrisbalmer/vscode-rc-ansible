@@ -1,0 +1,6 @@
+wheel
+ansible==2.8.0
+pywinrm==0.3.0
+pykerberos==1.2.1
+requests_kerberos==0.12.0
+requests-ntlm==1.1.0

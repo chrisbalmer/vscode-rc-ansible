@@ -4,7 +4,9 @@
     "dockerFile": "Dockerfile",
     "extensions": [
         "ms-python.python",
-        "vscoss.vscode-ansible"
+        "vscoss.vscode-ansible",
+        "mauve.terraform",
+        "redhat.vscode-yaml"
     ],
     "settings": {
         "python.pythonPath": "/usr/bin/python3",

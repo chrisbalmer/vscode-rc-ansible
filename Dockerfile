@@ -22,10 +22,16 @@ RUN cd /tmp/ \
     && mv op /usr/local/bin/ \
     && rm ./op*
 
-RUN mkdir /workspace /root/.ssh/
-WORKDIR /workspace
+RUN cd /tmp/ \
+    && curl -OL https://github.com/wata727/tflint/releases/download/v0.8.3/tflint_linux_amd64.zip \
+    && unzip tflint_linux_amd64.zip \
+    && mv tflint /usr/local/bin/ \
+    && rm ./tflint_linux_amd64.zip
 
-COPY .devcontainer/requirements.txt.core requirements.txt* /workspace/
+RUN mkdir /workspaces /root/.ssh/
+WORKDIR /workspaces
+
+COPY .devcontainer/requirements.txt.core requirements.txt* /workspaces/
 
 RUN pip3 install -r requirements.txt.core
 RUN if [ -f "requirements.txt" ]; then pip3 install -r requirements.txt && rm requirements.txt*; fi
